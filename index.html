@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Amaka ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f3e8ff, #fbcfe8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      color: #9333ea;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #4b5563;
+      font-size: 1.1rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      background-color: #9333ea;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #7e22ce;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hey Amaka ❤️</h1>
+    <div id="message">
+      <p>I have something special to tell you...</p>
+      <button onclick="revealMessage()">Click to Reveal</button>
+    </div>
+    <div id="reveal" class="hidden">
+      <p>I love you so much, Amaka. 💜</p>
+      <p>And guess what? We're going to see <strong>Les Misérables</strong> at the <strong>Sondheim Theatre</strong> in London this August! 🎭✨</p>
+    </div>
+  </div>
+
+  <script>
+    function revealMessage() {
+      document.getElementById('message').classList.add('hidden');
+      document.getElementById('reveal').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
