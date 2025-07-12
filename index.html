@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To Amaka ❤️</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
       background: linear-gradient(to bottom right, #f3e8ff, #fbcfe8);
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      position: relative;
+      transition: background 1s ease-in-out;
     }
     .card {
       background: white;
@@ -20,7 +25,9 @@
       border-radius: 1.5rem;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       max-width: 400px;
+      width: 90%;
       text-align: center;
+      z-index: 2;
     }
     h1 {
       color: #9333ea;
@@ -47,23 +54,38 @@
     .hidden {
       display: none;
     }
+    .dim {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 1.5rem;
+    }
   </style>
 </head>
-<body>
-  <div class="card">
+<body id="page">
+
+  <!-- Initial message -->
+  <div class="card" id="message">
     <h1>Hey Amaka ❤️</h1>
-    <div id="message">
-      <p>I have something special to tell you...</p>
-      <button onclick="revealMessage()">Click to Reveal</button>
-    </div>
-    <div id="reveal" class="hidden">
-      <p>I love you more, Amaka 💜 xxx</p>
+    <p>I have something special to tell you...</p>
+    <button onclick="revealMessage()">Click to Reveal</button>
+  </div>
+
+  <!-- Reveal message -->
+  <div class="card hidden" id="reveal">
+    <div class="dim">
+      <h1>Hey Amaka ❤️</h1>
+      <p>I love you more 💜 xxx</p>
       <p>And to prove it, we're going to see <strong>Les Misérables</strong> at the <strong>Sondheim Theatre</strong> in London this Sept 19th @ 19:30 🎭✨</p>
     </div>
   </div>
 
   <script>
     function revealMessage() {
+      // Change background to Les Mis image
+      document.body.style.background = "url('LesMisLogo.png') no-repeat center center";
+      document.body.style.backgroundSize = "cover";
+
+      // Hide first card, show reveal card
       document.getElementById('message').classList.add('hidden');
       document.getElementById('reveal').classList.remove('hidden');
     }
